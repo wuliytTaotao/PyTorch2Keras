@@ -38,7 +38,7 @@ print(np.argmax(y.detach().numpy()))
 
 
 # Keras
-def get_AlexNet(num_classes=1000, drop_rate=0.5, regularizer_rate=0.01):
+def get_AlexNet(num_classes=1000, drop_rate=0.5):
     """
     PyTorch 中实现的 AlexNet 预训练模型结构，filter 的深度分别为：（64，192，384，256，256）。
     返回 AlexNet 的 inputs 和 outputs
@@ -63,11 +63,11 @@ def get_AlexNet(num_classes=1000, drop_rate=0.5, regularizer_rate=0.01):
 
     flat = layers.Flatten()(pool3)
 
-    dense1 = layers.Dense(4096, activation='relu', kernel_regularizer=regularizers.l2(regularizer_rate))(flat)
+    dense1 = layers.Dense(4096, activation='relu')(flat)
     dense1 = layers.Dropout(drop_rate)(dense1)
-    dense2 = layers.Dense(4096, activation='relu', kernel_regularizer=regularizers.l2(regularizer_rate))(dense1)
+    dense2 = layers.Dense(4096, activation='relu')(dense1)
     dense2 = layers.Dropout(drop_rate)(dense2)
-    outputs = layers.Dense(num_classes, activation='softmax', kernel_regularizer=regularizers.l2(regularizer_rate))(dense2)
+    outputs = layers.Dense(num_classes, activation='softmax')(dense2)
 
     return inputs, outputs
 

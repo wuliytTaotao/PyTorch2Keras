@@ -30,10 +30,9 @@ img_tmp = np.transpose(img, (0, 3, 1, 2))
 model = torchvision.models.alexnet(pretrained=True)
 
 # torch.save(model, './model/alexnet.pth')
-model = model.double()
 model.eval()
 
-y = model(Variable(torch.tensor(img_tmp)))
+y = model(Variable(torch.tensor(img_tmp, dtype=torch.float)))
 print(np.argmax(y.detach().numpy()))
 
 

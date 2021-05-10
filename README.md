@@ -4,4 +4,5 @@
 
 将 PyTorch 中预训练好的 AlexNet 模型转化成 tf.keras 可读的 h5 文件。
 
-文件 `model/keras_alexnet.h5` 即是通过 [GitHub - microsoft/MMdnn](https://github.com/microsoft/MMdnn) 生成的 keras 可以加载的 AlexNet 预训练模型参数。
+文件 `model/keras_alexnet.h5` 即是通过 [GitHub - microsoft/MMdnn](https://github.com/microsoft/MMdnn) 生成的 keras 可以加载的 AlexNet 预训练模型参数，可以从百度网盘中下载：
+- https://pan.baidu.com/s/1TCbSHn5DC7pPIk-0dnbmgg 提取码：8njp 
